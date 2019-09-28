@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test websocket</title>
+</head>
+<script type="text/javascript">
+
+    var socket;
+
+    if (window.WebSocket){
+
+        socket = new WebSocket("ws://localhost:9999/ws");
+        //接收到数据时回调
+        socket.onmessage = function (ev) {
+            console.log('onmessage')
+            var ta = document.getElementById('responseText');
+            ta.value = ta.value + "\n" +ev.data
+        }
+        //建立连接时回调
+        socket.onopen = function (ev) {
+            console.log('onopen')
+            var ta = document.getElementById('responseText');
+            ta.value = "连接开启\n"
+        }
+        //连接断掉时回调
+        socket.onclose = function (ev) {
+            console.log('onclose')
+            var ta = document.getElementById('responseText');
+            ta.value = "连接关闭\n"
+        }
+
+    } else {
+        alert("浏览器不支持WebSocket");
+    }
+
+    function send(message) {
+        if (!window.WebSocket){
+            return;
+        }
+        if (socket.readyState == WebSocket.OPEN){
+            socket.send(message);
+        }else{
+            alert("连接未开启");
+        }
+    }
+</script>
+<body>
+<form onsubmit="return false">
+    <table align="center">
+        <tr>
+            <td>
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="发送数据" onclick="send(this.form.message.value)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>服务端输出：</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id="responseText" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" onclick="javascript:document.getElementById('responseText').value=''" value="清空内容">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>
