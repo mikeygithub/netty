@@ -1,0 +1,19 @@
+syntax="proto2";
+//package com.mikey
+option optimize_for = SPEED;
+option java_package = "student";
+option java_outer_classname = "DataInfo";
+
+message Student{
+    optional string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+}
+
+enum Type{
+    Student s;
+}
+
+message Address{
+    optional string address_name = 1;
+}
