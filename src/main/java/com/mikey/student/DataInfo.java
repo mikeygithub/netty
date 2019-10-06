@@ -80,10 +80,11 @@ public final class DataInfo {
       address_ = "";
     }
 
-    @Override
+//    @Override
     @SuppressWarnings({"unused"})
     protected Object newInstance(
-        UnusedPrivateParameter unused) {
+//        UnusedPrivateParameter unused
+    ) {
       return new Student();
     }
 
@@ -916,10 +917,10 @@ public final class DataInfo {
       "\022\013\n\003age\030\002 \001(\005\022\017\n\007address\030\003 \001(\tB\025\n\007studen" +
       "tB\010DataInfoH\001"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+//    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+//      .internalBuildGeneratedFileFrom(descriptorData,
+//        new com.google.protobuf.Descriptors.FileDescriptor[] {
+//        });
     internal_static_Student_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_Student_fieldAccessorTable = new

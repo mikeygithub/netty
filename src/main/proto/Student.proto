@@ -1,0 +1,50 @@
+syntax="proto3";
+
+package com.mikey.grpc;
+
+option java_package = "com.mikey.grpcstream";
+
+option java_outer_classname = "StudentProto";
+
+option java_multiple_files = true;
+
+service StudentService {
+    //message 2 message
+    rpc GetRealNameByUserName(Request) returns (Response){}
+    //message 2 stream message
+    rpc GetStudentByAge(Request) returns (stream StudentResponse){}
+    //stream message 2 message
+    rpc GetStudentByStream(stream StudentResponseList) returns (StudentResponse){}
+    //stream message 2 stream message
+    rpc BiTalk(stream StreamRequest) returns (stream StreamResponse){}
+}
+
+
+message Request {
+    string username = 1;
+}
+
+message Response {
+    string realname = 2;
+}
+
+message StudentResponse {
+    string name = 1;
+    int32 age =2;
+    string city = 3;
+}
+
+message StudentRequest {
+    string key = 1;
+}
+
+message StudentResponseList {
+    repeated StudentResponse studentResponse = 1;
+}
+
+message  StreamRequest {
+    string request_info = 1;
+}
+message StreamResponse {
+    string response_info = 1;
+}
