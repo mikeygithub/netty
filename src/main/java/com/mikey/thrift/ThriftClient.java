@@ -28,9 +28,6 @@ public class ThriftClient {
             System.out.println(mikey.getUsername());
             System.out.println(mikey.getAge());
             System.out.println(mikey.isMarried());
-
-            System.out.println("=============================");
-
             client.savePerson(mikey);
 
         }catch (Exception e){

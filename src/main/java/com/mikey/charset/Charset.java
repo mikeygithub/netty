@@ -1,4 +1,4 @@
-package com.mikey;
+package com.mikey.charset;
 
 import java.io.File;
 import java.io.RandomAccessFile;

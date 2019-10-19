@@ -32,6 +32,16 @@ dependencies {
     compile group: 'io.netty', name: 'netty-all', version: '4.1.10.Final'
     // https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring
     compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.4.0'
+    // https://mvnrepository.com/artifact/org.springframework/spring-aop
+    compile group: 'org.springframework', name: 'spring-aop', version: '5.2.0.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    compile group: 'org.springframework', name: 'spring-context', version: '5.2.0.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    compile group: 'org.springframework', name: 'spring-core', version: '5.2.0.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-beans
+    compile group: 'org.springframework', name: 'spring-beans', version: '5.2.0.RELEASE'
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.4'
 }
 
 /**
