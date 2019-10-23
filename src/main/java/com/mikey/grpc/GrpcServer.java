@@ -20,6 +20,7 @@ public class GrpcServer {
 
     public static void main(String[] args) throws Exception{
 
+
         Server start = ServerBuilder.forPort(8899)
                 .addService(new com.mikey.grpc.StudentServiceImpl())
                 .build()
